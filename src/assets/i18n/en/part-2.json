@@ -1,0 +1,41 @@
+{
+  "mood": "estatic",
+  "primeSealWash": {
+    "local": "No tasks are required prior to performing a qualification.",
+    "remote": "https://jsonplaceholder.typicode.com/todos/5"
+  },
+
+  "swipe": {
+    "local": "Swipe up to unlock"
+  },
+
+  "enterPin": "Enter your 4 digit pin",
+
+  "logo": {
+    "path": {
+      "local": "../assets/images/en/di.svg",
+      "remote": "https://angular.io/generated/images/marketing/concept-icons/components.svg"
+    }
+  },
+
+  "movie": {
+    "path": {
+      "local": "../assets/videos/en/earth.mp4",
+      "remote": "https://www.w3schools.com/html/movie.mp4"
+    }
+  },
+
+  "article1": {
+    "body": {
+      "local": "<h3>Example of 2 paragraphs.</h3><p>The PREMIER columns are packed with the following: 1.7-µm, bridged, ethylsiloxane, hybrid; 1.8-µm, high-strength silica particles, or 1.6-µm solid-core particles that can mechanically endure high-pressure conditions. The column hardware and the matched outlet tubing can withstand as much as 103,421 kPa (1034 bar, 15,000 psi). The column dimensions allow optimal MS-compatible flow rates, and matched outlet tubing minimizes the effect of extra-column volume.</p><p>Although the system works with any analytical column, specially designed PREMIER columns maximize its high-pressure capabilities. Compared with traditional HPLC columns, PREMIER columns deliver superior resolution and sensitivity in the same run time or equivalent resolution, greater sensitivity, and faster run times.</p>",
+      "remote": "https://jsonplaceholder.typicode.com/todos/5"
+    }
+  },
+
+  "article2": {
+    "body": {
+      "local": "<p>If you chose Configure settings for a non-regulated environment (non GxP)</uicontrol>, UNIFI software configures these global policies.</p><p><table><tr><th>Policy</th><th>Settings</th><th>Description</th></tr><tr><td>Audit Trail Reasons</td><td>No reasons and passwords required.</td><td>Users do not need to supply a reason and their password when they modify or delete a system object.</td></tr><tr><td>Timeout</td><td>60 minutes for both inactive work sessions and Signoff dialog box<td>The number of minutes that a work session can remain inactive before the application closes and users must enter their user names and passwords to log back on to the software.The number of minutes that the Signoff dialog box can remain inactive before it closes.</tr><tr><td>User Account</td><td>No password or limit to the number of failed authentication attempts.</td><td>No user account password requirements and no limit to the number of times that users can enter their user name and password incorrectly before their account status is changed from active to disabled.</td></tr><tr><td>Qualification</td><td>No qualification requirements.</td><td>No tasks are required prior to performing a qualification.</td></tr></table></p><p>The data folder policy Non GxP is applied to the Company data folder and users do not need to supply a reason and their password when modify or delete objects such as analysis injections and reports that reside in data folders.</p>",
+      "remote": "https://jsonplaceholder.typicode.com/todos/5"
+    }
+  }
+}

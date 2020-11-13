@@ -1,0 +1,22 @@
+$toolbar-height: 60px;
+
+.div-root-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    .div-toolbar {
+        flex: none;
+        display:flex;
+        flex-direction: row;
+        height: $toolbar-height;
+
+        .toolbar-spacer {
+            flex: 1;
+        }
+
+        div {
+            margin:5px;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "name": {
+    "local": "My name is {{name}}"
+  },
+  "image": {
+    "path": "../assets/images/en/di.svg",
+    "alt": "not-found"
+  },
+  "assist": {
+    "local": "This info is from local storage",
+    "remote": "https://jsonplaceholder.typicode.com/todos/1"
+  },
+  "primeSolvent": {
+    "local": "Priming solvent can take several minutes."
+  },
+  "withStyle": "<div class='loco-style'>Show me some style.</div>"
+}

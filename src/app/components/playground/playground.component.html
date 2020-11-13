@@ -1,0 +1,88 @@
+<div class='div-playground-container'>
+    <mat-card>
+        <mat-card-title>
+            <h1>Transloco</h1>
+            <label>Select a language</label>
+            <mat-radio-group aria-label="Select a language" [(ngModel)]="selectedLanguage">
+                <mat-radio-button value="es">es</mat-radio-button>
+                <mat-radio-button value="en">en</mat-radio-button>
+            </mat-radio-group>
+            <mat-divider></mat-divider>
+        </mat-card-title>
+
+        <mat-card-content>
+            <ng-container *transloco="let t;">
+                <h2>Localized simple sentence</h2>
+                <p>{{ t('name.local', { name: 'Transloco' }) }}</p>
+                <mat-divider></mat-divider>
+
+                <h2>Localized assets</h2>
+                <div><img [alt]="' image.alt' | transloco " [src]="'image.path' | transloco" />
+                </div>
+                <mat-divider></mat-divider>
+
+                <h2>
+                    Testing Local and Remote Device content using PipeTransforms
+                </h2>
+                <mat-slide-toggle [(ngModel)]="hasInternet">Has Internet?</mat-slide-toggle>
+                <ng-container *ngIf="hasInternet; else elseTemplate">
+                    <div>This data is served out from JSONPlaceHolder.com</div>
+                    <div>{{t('assist.remote') | remoteContent | async }}</div>
+                    <br>
+                    <div>This remote data is not available so fallback to local.</div>
+                    <div>{{t('primeSolvent.remote') | remoteContent | async }}</div>
+                </ng-container>
+                <ng-template #elseTemplate>
+                    <div>{{t('assist.local')}}</div>
+                    <div>{{t('primeSolvent.local')}}</div>
+                </ng-template>
+                <mat-divider></mat-divider>
+
+                <h2>
+                    Testing Local and Remote content using Interceptor.
+                </h2>
+                <div>{{t('primeSolvent')}}</div>
+
+                <mat-divider></mat-divider>
+                <h2>
+                    Multiple JSON files. Text coming from a second file.
+                </h2>
+                <div>
+                    What is your mood today? {{t('mood')}}
+                </div>
+
+                <h2>Using styles</h2>
+                <ng-container>
+                    <span [innerHtml]="'withStyle' | transloco"></span>
+                </ng-container>
+
+                <h2>Using ICS-Transform</h2>
+                <h4>Local Text</h4>
+                <div>{{t('primeSealWash.local') | icsTransloco | async}}</div>
+                <h4>Remote Text</h4>
+                <div>{{t('primeSealWash.remote') | icsTransloco | async }}</div>
+
+                <h4>Local Image</h4>
+                <div>{{'logo.path.local'| transloco | icsTransloco | async}}</div>
+                <div><img width='150' height='150' [src]="t('logo.path.local') | icsTransloco | async" /></div>
+                <h4>Remote Image</h4>
+                <div>{{'logo.path.remote'| transloco | icsTransloco | async}}</div>
+                <div><img width='150' height='150' [src]="t('logo.path.remote') | icsTransloco | async" /></div>
+
+                <h4>Local Video</h4>
+                <div>{{'movie.path.local'| transloco | icsTransloco | async}}</div>
+                <app-video [srcLink]="t('movie.path.local') | icsTransloco | async"></app-video>
+                <h4>Remote Video</h4>
+                <div>{{'movie.path.remote'| transloco | icsTransloco | async}}</div>
+                <app-video [srcLink]="t('movie.path.remote') | icsTransloco | async"></app-video>
+
+                <h4>Local HTML Article</h4>
+                <div [innerHTML]="t('article1.body.local') | icsTransloco | async"></div>
+
+                <h4>Remote HTML Article</h4>
+                <div [innerHTML]="t('article1.body.remote') | icsTransloco | async"></div>
+            </ng-container>
+
+        </mat-card-content>
+    </mat-card>
+</div>

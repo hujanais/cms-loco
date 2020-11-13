@@ -1,0 +1,138 @@
+<div class='div-home-container'>
+    <div class='div-home-body'>
+        <div class='div-home-header'>
+            <h1>Transloco Examples</h1>
+            <label>Select a language</label>
+            <mat-radio-group aria-label="Select a language" [(ngModel)]="selectedLanguage">
+                <mat-radio-button value="es">es</mat-radio-button>
+                <mat-radio-button value="en">en</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+        <ng-container *transloco="let t;">
+            <mat-list>
+                <div>
+                    <mat-card>
+                        <mat-card-title>
+                            Local and remote sentence
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            <div>
+                                &lt;div&gt;t('primeSealWash.local') | icsTransloco | async}}&lt;/div&gt;
+                            </div>
+                        </mat-card-subtitle>
+                        <mat-card-content>
+                            <h4>Local Text</h4>
+                            <div>{{t('primeSealWash.local') | icsTransloco | async}}</div>
+                            <h4>Remote Text</h4>
+                            <div>{{t('primeSealWash.remote') | icsTransloco | async }}</div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div>
+                    <mat-card>
+                        <mat-card-title>
+                            Local and remote images
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            <div>
+                                &lt;div&gt;&lt;img [src]=&quot;t('logo.path.local') | icsTransloco | async&quot;
+                                /&gt;&lt;/div&gt;
+                            </div>
+                        </mat-card-subtitle>
+                        <mat-card-content>
+                            <div class='div-column'>
+                                <div class='div-item'>
+                                    <h4>Local Image</h4>
+                                    <div>{{'logo.path.local'| transloco | icsTransloco | async}}</div>
+                                    <div><img [src]="t('logo.path.local') | icsTransloco | async" /></div>
+                                </div>
+                                <div class='div-item'>
+                                    <h4>Remote Image</h4>
+                                    <div>{{'logo.path.remote'| transloco | icsTransloco | async}}</div>
+                                    <div><img width='250' height='250'
+                                            [src]="t('logo.path.remote') | icsTransloco | async" /></div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div>
+                    <mat-card>
+                        <mat-card-title>
+                            Local and remote videos
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            <div>
+                                &lt;app-video width='200' height='200' [srcLink]=&quot;t('movie.path.local') |
+                                icsTransloco | async&quot; /&gt;
+                            </div>
+                        </mat-card-subtitle>
+                        <mat-card-content>
+                            <div class='div-column'>
+                                <div class='div-item'>
+                                    <h4>Local Video</h4>
+                                    <div>
+                                        <app-video width='200' height='200'
+                                            [srcLink]="t('movie.path.local') | icsTransloco | async">
+                                        </app-video>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4>Remote Video</h4>
+                                    <div class='div-item'>
+                                        <app-video width='200' height='200'
+                                            [srcLink]="t('movie.path.remote') | icsTransloco | async">
+                                        </app-video>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div>
+                    <mat-card>
+                        <mat-card-title>
+                            Local and remote html articles
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            <div>
+                                &lt;div [innerHTML]=&quot;t('article1.body.local') | icsTransloco |
+                                async&quot;&gt;&lt;/div&gt;
+                            </div>
+                        </mat-card-subtitle>
+                        <mat-card-content>
+                            <h4>Local HTML Article</h4>
+                            <div [innerHTML]="t('article1.body.local') | icsTransloco | async"></div>
+
+                            <h4>Remote HTML Article</h4>
+                            <div [innerHTML]="t('article1.body.remote') | icsTransloco | async"></div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div>
+                    <mat-card>
+                        <mat-card-title>
+                            Local and remote html articles with tables.
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            <div>
+                                &lt;div [innerHTML]=&quot;t('article2.body.local') | icsTransloco |
+                                async&quot;&gt;&lt;/div&gt;
+                            </div>
+                            <div>Table style is implicitly applied for clarity. encapsulation: ViewEncapsulation.None
+                                required for styles.</div>
+                        </mat-card-subtitle>
+                        <mat-card-content>
+                            <h4>Local HTML Article</h4>
+                            <div [innerHTML]="t('article2.body.local') | icsTransloco | async"></div>
+
+                            <h4>Remote HTML Article</h4>
+                            <div [innerHTML]="t('article2.body.remote') | icsTransloco | async"></div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </mat-list>
+        </ng-container>
+    </div>
+</div>

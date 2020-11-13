@@ -1,0 +1,34 @@
+{
+  "mood": "estado animico",
+  "primeSealWash": {
+    "local": "No tasks are required prior to performing a qualification.",
+    "remote": "https://jsonplaceholder.typicode.com/todos/5"
+  },
+
+  "swipe": {
+    "local": "Swipe up to unlock"
+  },
+
+  "enterPin": "Enter your 4 digit pin",
+
+  "logo": {
+    "path": {
+      "local": "../assets/images/en/di.svg",
+      "remote": "https://www.w3schools.com/html/img_chania.jpg"
+    }
+  },
+
+  "movie": {
+    "path": {
+      "local": "../assets/videos/en/earth.mp4",
+      "remote": "https://www.w3schools.com/html/movie.mp4"
+    }
+  },
+
+  "article1": {
+    "body": {
+      "local": "<h3>Example of 2 paragraphs.</h3>",
+      "remote": "https://jsonplaceholder.typicode.com/todos/5"
+    }
+  }
+}

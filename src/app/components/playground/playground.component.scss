@@ -1,0 +1,17 @@
+$toolbar-height: 60px;
+
+.div-playground-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - #{$toolbar-height});
+    overflow-y: auto;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+mat-radio-button {
+    margin: 10px;
+}

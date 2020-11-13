@@ -1,0 +1,60 @@
+$toolbar-height: 60px;
+
+.div-home-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - #{$toolbar-height});
+    overflow-y: auto;
+
+    .div-home-body {
+        display: flex;
+        flex-direction: column;
+        margin: 5px;
+    }
+
+    .div-home-header {
+        margin-left: 10px;
+    
+        mat-radio-button {
+            margin-left: 10px;
+        }
+    }
+
+    .div-column {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .div-item {
+        margin-left: 10px;
+    }
+
+    mat-card-subtitle {
+        color: cornflowerblue;
+    }
+
+    img {
+        max-width: 128px;
+        max-height: 128px;
+    }
+
+    mat-card {
+        margin: 10px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+}
+

@@ -1,0 +1,17 @@
+{
+  "name": {
+    "local": "Mi nombre es {{name}}"
+  },
+  "image": {
+    "path": "../assets/images/es/di2.svg",
+    "alt": "extraviada"
+  },
+  "assist": {
+    "local": "(local)Esta información es del almacenamiento local",
+    "remote": "https://jsonplaceholder.typicode.com/todos/2"
+  },
+  "primeSolvent": {
+    "local": "El disolvente de imprimación puede tardar varios minutos."
+  },
+  "withStyle": "<div class='loco-style'>Show me some style.</div>"
+}
