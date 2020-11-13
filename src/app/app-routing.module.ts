@@ -5,7 +5,8 @@ import { PlaygroundComponent } from './components/playground/playground.componen
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'playground', component: PlaygroundComponent }
+  { path: 'playground', component: PlaygroundComponent },
+  { path: '**', component: HomeComponent }
 ];
 
 @NgModule({

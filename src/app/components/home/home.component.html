@@ -21,11 +21,14 @@
                                 &lt;div&gt;t('primeSealWash.local') | icsTransloco | async}}&lt;/div&gt;
                             </div>
                         </mat-card-subtitle>
+                        <mat-divider></mat-divider>
                         <mat-card-content>
-                            <h4>Local Text</h4>
-                            <div>{{t('primeSealWash.local') | icsTransloco | async}}</div>
-                            <h4>Remote Text</h4>
-                            <div>{{t('primeSealWash.remote') | icsTransloco | async }}</div>
+                            <div>
+                                <h4>Local Text</h4>
+                                <div>{{t('primeSealWash.local') | icsTransloco | async}}</div>
+                                <h4>Remote Text</h4>
+                                <div>{{t('primeSealWash.remote') | icsTransloco | async }}</div>
+                            </div>
                         </mat-card-content>
                     </mat-card>
                 </div>
@@ -40,6 +43,7 @@
                                 /&gt;&lt;/div&gt;
                             </div>
                         </mat-card-subtitle>
+                        <mat-divider></mat-divider>
                         <mat-card-content>
                             <div class='div-column'>
                                 <div class='div-item'>
@@ -68,6 +72,7 @@
                                 icsTransloco | async&quot; /&gt;
                             </div>
                         </mat-card-subtitle>
+                        <mat-divider></mat-divider>
                         <mat-card-content>
                             <div class='div-column'>
                                 <div class='div-item'>
@@ -101,6 +106,7 @@
                                 async&quot;&gt;&lt;/div&gt;
                             </div>
                         </mat-card-subtitle>
+                        <mat-divider></mat-divider>
                         <mat-card-content>
                             <h4>Local HTML Article</h4>
                             <div [innerHTML]="t('article1.body.local') | icsTransloco | async"></div>
@@ -123,12 +129,15 @@
                             <div>Table style is implicitly applied for clarity. encapsulation: ViewEncapsulation.None
                                 required for styles.</div>
                         </mat-card-subtitle>
+                        <mat-divider></mat-divider>
                         <mat-card-content>
-                            <h4>Local HTML Article</h4>
-                            <div [innerHTML]="t('article2.body.local') | icsTransloco | async"></div>
+                            <div>
+                                <h4>Local HTML Article</h4>
+                                <div [innerHTML]="t('article2.body.local') | icsTransloco | async"></div>
 
-                            <h4>Remote HTML Article</h4>
-                            <div [innerHTML]="t('article2.body.remote') | icsTransloco | async"></div>
+                                <h4>Remote HTML Article</h4>
+                                <div [innerHTML]="t('article2.body.remote') | icsTransloco | async"></div>
+                            </div>
                         </mat-card-content>
                     </mat-card>
                 </div>
