@@ -28,7 +28,7 @@
   "article1": {
     "body": {
       "local": "<h3>Example of 2 paragraphs.</h3>",
-      "remote": "https://jsonplaceholder.typicode.com/todos/5"
+      "remote": "https://vercel-serverless-hujanais.vercel.app/api/waters?articleId=1"
     }
   }
 }
