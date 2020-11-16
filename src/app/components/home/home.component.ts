@@ -9,7 +9,7 @@ import { TranslocoService } from '@ngneat/transloco';
 })
 export class HomeComponent implements OnInit {
 
-  private _selectedLanguage: string = 'en';
+  private _selectedLanguage = 'en';
 
   constructor(private translocoService: TranslocoService) { }
 

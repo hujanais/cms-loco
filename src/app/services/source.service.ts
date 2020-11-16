@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class SourceService {
 
-  private _hasInternet: boolean = false;
+  private _hasInternet = false;
 
   constructor() { }
 

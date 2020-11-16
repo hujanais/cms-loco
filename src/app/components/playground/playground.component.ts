@@ -8,8 +8,8 @@ import { TranslocoService } from '@ngneat/transloco';
   styleUrls: ['./playground.component.scss']
 })
 export class PlaygroundComponent implements OnInit {
-  hasInternet: boolean = true;
-  _selectedLanguage: string = 'en';
+  hasInternet = true;
+  _selectedLanguage = 'en';
 
   constructor(private translocoService: TranslocoService, private http: HttpClient) {
   }

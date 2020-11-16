@@ -11,6 +11,11 @@
 
   "enterPin": "Enter your 4 digit pin",
 
+  "withInterpolations": {
+    "local": " The column hardware and the matched outlet tubing can withstand as much as {{maxPressurekPa}} kPa ({{maxPressureBar}} bar, {{maxPressurePSI}} psi).",
+    "remote": "https://vercel-serverless-hujanais.vercel.app/api/waters?articleId=2"
+  },
+
   "logo": {
     "path": {
       "local": "../assets/images/en/di.svg",

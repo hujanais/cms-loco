@@ -1,7 +1,7 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Pipe, PipeTransform } from '@angular/core';
 import { TranslocoService } from '@ngneat/transloco';
-import { map, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Pipe({
   name: 'icsTransloco',
@@ -44,14 +44,14 @@ export class ICSTranslocoPipe implements PipeTransform {
   }
 
   private isImage(str): boolean {
-    var patt = /.png|.svg|.jpg|.svg/i;
-    var result = str.match(patt);
+    let patt = /.png|.svg|.jpg|.svg/i;
+    let result = str.match(patt);
     return !!result;
   }
 
   private isVideo(str): boolean {
-    var patt = /.mov|.ogg/i;
-    var result = str.match(patt);
+    let patt = /.mov|.ogg/i;
+    let result = str.match(patt);
     return !!result;
   }
 }
