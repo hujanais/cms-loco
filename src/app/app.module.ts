@@ -15,6 +15,9 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RemoteContentPipe } from './pipes/remote-content.pipe';
 import { ICSTranslocoPipe } from './pipes/ics-transloco.pipe';
+import { SafeHtmlPipe } from './pipes/safehtml.pipe';
+import { SafeUrlPipe } from './pipes/safeurl.pipe';
+import { SafeResourceUrlPipe } from './pipes/saferesourceurl.pipe';
 
 import { MissingInterceptor } from './transloco/transloco-missing-interceptor';
 import { CustomInterceptor } from './transloco/transloco-interceptor';
@@ -28,6 +31,9 @@ import { VideoComponent } from './components/video/video.component';
     AppComponent,
     RemoteContentPipe,
     ICSTranslocoPipe,
+    SafeHtmlPipe,
+    SafeUrlPipe,
+    SafeResourceUrlPipe,
     HomeComponent,
     PlaygroundComponent,
     VideoComponent,

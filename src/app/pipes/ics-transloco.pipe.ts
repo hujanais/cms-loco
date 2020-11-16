@@ -1,7 +1,7 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Pipe, PipeTransform } from '@angular/core';
 import { TranslocoService } from '@ngneat/transloco';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 @Pipe({
   name: 'icsTransloco',
@@ -26,8 +26,7 @@ export class ICSTranslocoPipe implements PipeTransform {
       return val;
     } else if (this.isValidUrl(val)) {
       return this.http.get(val).pipe(
-        map((b: any) => JSON.stringify(b))
-        // map((b: any) => b.title)
+        map((data: any) => data.body)
       ).toPromise();
     }
 
