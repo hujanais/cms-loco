@@ -16,6 +16,11 @@
     "remote": "https://vercel-serverless-hujanais.vercel.app/api/waters?articleId=2"
   },
 
+  "withMissingInterpolations": {
+    "local": "Demostrates the scenario when the interpolated string are missing. {{not-found}}",
+    "remote": "https://vercel-serverless-hujanais.vercel.app/api/waters?articleId=4"
+  },
+
   "logo": {
     "path": {
       "local": "../assets/images/en/di.svg",

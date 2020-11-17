@@ -9,7 +9,7 @@ import { SourceService } from '../services/source.service';
 export class MissingInterceptor implements TranslocoMissingHandler {
 
     constructor(private sourceService: SourceService, private translocoService: TranslocoService) {
-        console.log('ctor', 'MissingInterceptor');
+        // console.log('ctor', 'MissingInterceptor');
     }
 
     handle(key: string, config: TranslocoConfig) {

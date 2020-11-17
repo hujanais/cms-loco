@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { TranslocoService } from '@ngneat/transloco';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,11 @@ export class HomeComponent implements OnInit {
 
   private _selectedLanguage = 'en';
 
-  constructor(private translocoService: TranslocoService) { }
+  interpolatedValues: {};
+
+  constructor(private translocoService: TranslocoService) {
+    this.interpolatedValues = { maxPressurekPa: '103,421', maxPressureBar: '1034', maxPressurePSI: '15,000' }
+  }
 
   set selectedLanguage(value: string) {
     this.translocoService.setActiveLang(value);
@@ -24,5 +29,4 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

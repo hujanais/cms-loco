@@ -21,7 +21,7 @@ import { SafeResourceUrlPipe } from './pipes/saferesourceurl.pipe';
 
 import { MissingInterceptor } from './transloco/transloco-missing-interceptor';
 import { CustomInterceptor } from './transloco/transloco-interceptor';
-import { TRANSLOCO_INTERCEPTOR, TRANSLOCO_MISSING_HANDLER } from '@ngneat/transloco';
+import { TRANSLOCO_INTERCEPTOR, TRANSLOCO_MISSING_HANDLER, TRANSLOCO_TRANSPILER } from '@ngneat/transloco';
 import { HomeComponent } from './components/home/home.component';
 import { PlaygroundComponent } from './components/playground/playground.component';
 import { VideoComponent } from './components/video/video.component';

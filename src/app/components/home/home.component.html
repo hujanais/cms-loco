@@ -18,7 +18,7 @@
                         </mat-card-title>
                         <mat-card-subtitle>
                             <div>
-                                div&gt;t('primeSealWash.local') | icsTransloco | async}}/div&gt;
+                                &lt;div&gt;t('primeSealWash.local') | icsTransloco | async}}&lt;/div&gt;
                             </div>
                         </mat-card-subtitle>
                         <mat-divider></mat-divider>
@@ -39,7 +39,8 @@
                         </mat-card-title>
                         <mat-card-subtitle>
                             <div>
-                                div&gt;t('primeSealWash.local') | icsTransloco | async}}/div&gt;
+                                &lt;div [innerHTML]="t('withInterpolations.remote') | icsTransloco:
+                                interpolatedValues | async">&lt;div&gt;
                             </div>
                         </mat-card-subtitle>
                         <mat-divider></mat-divider>
@@ -47,14 +48,36 @@
                             <div>
                                 <h4>Local Text with dynamic data.</h4>
                                 <div>
-                                    {{ t('withInterpolations.local', { maxPressurekPa: '103,421', maxPressureBar: '1034', maxPressurePSI:'15,000' }) }}
+                                    {{ t('withInterpolations.local', interpolatedValues) | icsTransloco | async }}
                                 </div>
                                 <h4>Remote Text with dynamic data</h4>
-                                <div>
-                                    <div>{{'withInterpolations.remote'| transloco | icsTransloco | async}}</div>
-                                </div>
                                 <div
-                                    [innerHTML]="t('withInterpolations.remote', { maxPressurekPa: '103,421', maxPressureBar: '1034', maxPressurePSI:'15,000' }) | icsTransloco | async">
+                                    [innerHTML]="t('withInterpolations.remote') | icsTransloco: interpolatedValues | async">
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div>
+                    <mat-card>
+                        <mat-card-title>
+                            Local and remote sentence with missing interpolations
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            <div>
+                                &lt;div [innerHTML]="t('withInterpolations.remote') | icsTransloco:
+                                interpolatedValues | async">&lt;div&gt;
+                            </div>
+                        </mat-card-subtitle>
+                        <mat-divider></mat-divider>
+                        <mat-card-content>
+                            <div>
+                                <h4>Local Text with dynamic data.</h4>
+                                <div>
+                                    {{ t('withMissingInterpolations.local') | icsTransloco | async }}
+                                </div>
+                                <h4>Remote Text with dynamic data</h4>
+                                <div [innerHTML]="t('withMissingInterpolations.remote') | icsTransloco | async">
                                 </div>
                             </div>
                         </mat-card-content>
@@ -67,8 +90,8 @@
                         </mat-card-title>
                         <mat-card-subtitle>
                             <div>
-                                div&gt;img [src]=&quot;t('logo.path.local') | icsTransloco | async&quot;
-                                /&gt;/div&gt;
+                                &lt;div&gt;img [src]=&quot;t('logo.path.local') | icsTransloco | async&quot;
+                                /&gt;&lt;/div&gt;
                             </div>
                         </mat-card-subtitle>
                         <mat-divider></mat-divider>
@@ -96,7 +119,7 @@
                         </mat-card-title>
                         <mat-card-subtitle>
                             <div>
-                                app-video width='200' height='200' [srcLink]=&quot;t('movie.path.local') |
+                                &lt;app-video width='200' height='200' [srcLink]=&quot;t('movie.path.local') |
                                 icsTransloco | async&quot; /&gt;
                             </div>
                         </mat-card-subtitle>
@@ -130,7 +153,7 @@
                         </mat-card-title>
                         <mat-card-subtitle>
                             <div>
-                                div [innerHTML]=&quot;t('article1.body.local') | icsTransloco |
+                                &lt;div [innerHTML]=&quot;t('article1.body.local') | icsTransloco |
                                 async&quot;&gt;/div&gt;
                             </div>
                         </mat-card-subtitle>
@@ -151,7 +174,7 @@
                         </mat-card-title>
                         <mat-card-subtitle>
                             <div>
-                                div [innerHTML]=&quot;t('article2.body.local') | icsTransloco |
+                                &lt;div [innerHTML]=&quot;t('article2.body.local') | icsTransloco |
                                 async&quot;&gt;/div&gt;
                             </div>
                             <div>Table style is implicitly applied for clarity. encapsulation: ViewEncapsulation.None

@@ -8,7 +8,7 @@ import { SourceService } from '../services/source.service';
 
 export class CustomInterceptor implements TranslocoInterceptor {
     constructor() {
-        console.log('ctor', 'CustomInterceptor');
+        // console.log('ctor', 'CustomInterceptor');
     }
 
     preSaveTranslation(translation: Translation, lang: string): Translation {
@@ -16,7 +16,6 @@ export class CustomInterceptor implements TranslocoInterceptor {
     }
 
     preSaveTranslationKey(key: string, value: string, lang: string): string {
-        console.log('preSaveTranslationKey', key, value, lang);
         return value;
     }
 }

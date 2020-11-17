@@ -10,13 +10,12 @@ import { map } from 'rxjs/operators';
 
 export class ICSTranslocoPipe implements PipeTransform {
 
+  private cachedData: any = null;
+
   constructor(private http: HttpClient, private transloco: TranslocoService) {
-    transloco.events$.subscribe(obs => {
-      console.log('something changed', JSON.stringify(obs));
-    });
   }
 
-  async transform(val: string) {
+  async transform(val: string, args: {}) {
     // check to see if this is a link.
     // check to see if this is an img/svg.
     // check to see if this is a video asset.
@@ -26,11 +25,26 @@ export class ICSTranslocoPipe implements PipeTransform {
       return val;
     } else if (this.isValidUrl(val)) {
       return this.http.get(val).pipe(
-        map((data: any) => data.body)
+        map((data: any) => data.body),
+        map((body: string) => this.interpolate(body, args))
       ).toPromise();
     }
 
     return val;
+  }
+
+  // expecting text to be, "This is a sentence. $key1 $key2"
+  // For now, the keys are case sensitive.
+  private interpolate(body: string, args: {}): string {
+    if (args) {
+      // search for all variables defined in the article body.
+      Object.keys(args).forEach(key => {
+        let placeHolder = '$' + key;
+        body = body.replace(placeHolder, args[key]);
+      });
+    }
+
+    return body;
   }
 
   private isValidUrl(str): boolean {
