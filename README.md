@@ -10,7 +10,7 @@
     }
 }
 `
-- <div> 'primeSealWash' | icsLocoSwitcher: hasInternet | transloco | icsTransloco | async </div>
+- `<div> 'primeSealWash' | icsLocoSwitcher: hasInternet | transloco | icsTransloco | async </div>`
 
 
 ##### Simple text article with variables
@@ -22,7 +22,7 @@
     }
 }
 `
-- <div>{{'withInterpolations' | icsLocoSwitcher: hasInternet | transloco | icsTransloco: {minTemperarature: 5.0, maxTemperature: 50.0} | async }} </div>
+- `<div>{{'withInterpolations' | icsLocoSwitcher: hasInternet | transloco | icsTransloco: {minTemperarature: 5.0, maxTemperature: 50.0} | async }} </div>`
 
 ##### Images
 `
@@ -33,7 +33,7 @@
     }
 }
 `
-- <img [src]="'logo.path' | icsLocoSwitcher: hasInternet | transloco | icsTransloco | async" />
+- `<img [src]="'logo.path' | icsLocoSwitcher: hasInternet | transloco | icsTransloco | async" />`
 
 ##### Videos
 `
@@ -44,7 +44,7 @@
     }
 }
 `
-- <app-video width='200' height='200' [srcLink]="'movie.path' | icsLocoSwitcher: hasInternet | transloco | icsTransloco | async"></app-video>
+- `<app-video width='200' height='200' [srcLink]="'movie.path' | icsLocoSwitcher: hasInternet | transloco | icsTransloco | async"></app-video>`
 
 ##### Rich content with html tags
 `
@@ -55,4 +55,8 @@
     }
 }
 `
-- <div [innerHTML]="'article2.body' | icsLocoSwitcher: hasInternet | transloco | icsTransloco | async"> </div> 
+- `<div [innerHTML]="'article2.body' | icsLocoSwitcher: hasInternet | transloco | icsTransloco | async"> </div> `
+
+##### Pipes
+
+
