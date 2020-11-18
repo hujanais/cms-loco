@@ -1,6 +1,17 @@
 # Using Transloco to display local and remote content/assets.
 
 ## Transloco JSON formats
+
+##### Expected JSON format
+`
+{
+  "key": {
+    "local": "local asset",
+    "remote": "url to remote asset"
+}
+`
+
+#### Examples
 ##### Simple text article
 `
 {
