@@ -193,8 +193,9 @@
                         </mat-card-title>
                         <mat-card-subtitle>
                             <div>
-                                'article1.body' | icsLocoSwitcher: false | transloco | icsTransloco | async
-                            </div>
+                                &lt;div [innerHTML]="'article1.body' | icsLocoSwitcher: hasInternet | transloco |
+                                icsTransloco
+                                | async&quot;&gt;/div&gt; </div>
                         </mat-card-subtitle>
                         <mat-divider></mat-divider>
                         <mat-card-content>
@@ -217,8 +218,9 @@
                         </mat-card-title>
                         <mat-card-subtitle>
                             <div>
-                                &lt;div [innerHTML]=&quot;t('article2.body.local') | icsTransloco |
-                                async&quot;&gt;/div&gt;
+                                &lt;div [innerHTML]="'article2.body' | icsLocoSwitcher: hasInternet | transloco |
+                                icsTransloco
+                                | async&quot;&gt;/div&gt;
                             </div>
                             <div>Table style is implicitly applied for clarity. encapsulation: ViewEncapsulation.None
                                 required for styles.</div>
@@ -227,10 +229,13 @@
                         <mat-card-content>
                             <div>
                                 <h4>Local HTML Article</h4>
-                                <div [innerHTML]="t('article2.body.local') | icsTransloco | async"></div>
+                                <div
+                                    [innerHTML]="'article2.body' | icsLocoSwitcher: false | transloco | icsTransloco | async">
+                                </div>
 
                                 <h4>Remote HTML Article</h4>
-                                <div [innerHTML]="t('article2.body.remote') | icsTransloco | async">
+                                <div
+                                    [innerHTML]="'article2.body' | icsLocoSwitcher: true | transloco | icsTransloco | async">
                                 </div>
                             </div>
                         </mat-card-content>
