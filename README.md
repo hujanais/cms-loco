@@ -59,4 +59,53 @@
 
 ##### Pipes
 
+The icsLocoSwitcher pipe just appends a .local or .remote to the transloco key.
+```  
+transform(val: string, hasInternet?: boolean) {
+    if (hasInternet) {
+      return `${val}.remote`;
+    }
+
+    return `${val}.local`;
+  }
+
+```
+
+The icsTransloco pipe just handles http requests for remote asset and to handle interpolation.  The native transloco directive will not be used for a generic solution.
+```
+async transform(val: string, args: {}) {
+    // check to see if this is a link.
+    // check to see if this is an img/svg.
+    // check to see if this is a video asset.
+    if (this.isImage(val)) {
+      return val;
+    } else if (this.isVideo(val)) {
+      return val;
+    } else if (this.isValidUrl(val)) {
+      return this.http.get(val).pipe(
+        map((data: any) => data.body),  // this map operation is dependent on the json content source. 
+                                        // For this demonstration, the data payload looks like, {articleId: XX, body: YY}
+        map((body: string) => this.interpolate(body, args))
+      ).toPromise();
+    }
+
+    return this.interpolate(val, args);
+  }
+  
+  // expecting text to be, "This is a sentence. $key1 $key2"
+  // For now, the keys are case sensitive.
+  // ex. The column hardware and the matched outlet tubing can withstand as much as $maxPressurekPa kPa ($maxPressureBar bar, $maxPressurePSI psi).
+  private interpolate(body: string, args: {}): string {
+    if (args) {
+      // search for all variables defined in the article body.
+      Object.keys(args).forEach(key => {
+        const placeHolder = '$' + key;
+        body = body.replace(placeHolder, args[key]);
+      });
+    }
+
+    return body;
+  }
+  
+```
 
