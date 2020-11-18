@@ -10,8 +10,6 @@ import { map } from 'rxjs/operators';
 
 export class ICSTranslocoPipe implements PipeTransform {
 
-  private cachedData: any = null;
-
   constructor(private http: HttpClient, private transloco: TranslocoService) {
   }
 
@@ -25,21 +23,23 @@ export class ICSTranslocoPipe implements PipeTransform {
       return val;
     } else if (this.isValidUrl(val)) {
       return this.http.get(val).pipe(
-        map((data: any) => data.body),
+        map((data: any) => data.body),// this map operation is dependent on the json content source. 
+        // For this demonstration, the data payload looks like, {articleId: XX, body: YY}
         map((body: string) => this.interpolate(body, args))
       ).toPromise();
     }
 
-    return val;
+    return this.interpolate(val, args);
   }
 
   // expecting text to be, "This is a sentence. $key1 $key2"
   // For now, the keys are case sensitive.
+  // ex. The column hardware and the matched outlet tubing can withstand as much as $maxPressurekPa kPa ($maxPressureBar bar, $maxPressurePSI psi).
   private interpolate(body: string, args: {}): string {
     if (args) {
       // search for all variables defined in the article body.
       Object.keys(args).forEach(key => {
-        let placeHolder = '$' + key;
+        const placeHolder = '$' + key;
         body = body.replace(placeHolder, args[key]);
       });
     }
@@ -58,14 +58,14 @@ export class ICSTranslocoPipe implements PipeTransform {
   }
 
   private isImage(str): boolean {
-    let patt = /.png|.svg|.jpg|.svg/i;
-    let result = str.match(patt);
+    const patt = /.png|.svg|.jpg|.svg/i;
+    const result = str.match(patt);
     return !!result;
   }
 
   private isVideo(str): boolean {
-    let patt = /.mov|.ogg/i;
-    let result = str.match(patt);
+    const patt = /.mov|.ogg/i;
+    const result = str.match(patt);
     return !!result;
   }
 }

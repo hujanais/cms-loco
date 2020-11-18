@@ -12,12 +12,12 @@
   "enterPin": "Enter your 4 digit pin",
 
   "withInterpolations": {
-    "local": " The column hardware and the matched outlet tubing can withstand as much as {{maxPressurekPa}} kPa ({{maxPressureBar}} bar, {{maxPressurePSI}} psi).",
+    "local": " The column hardware and the matched outlet tubing can withstand as much as $maxPressurekPa kPa ($maxPressureBar bar, $maxPressurePSI psi).",
     "remote": "https://vercel-serverless-hujanais.vercel.app/api/waters?articleId=2"
   },
 
   "withMissingInterpolations": {
-    "local": "Demostrates the scenario when the interpolated string are missing. {{not-found}}",
+    "local": "Demostrates the scenario when the interpolated string are missing. $not-found",
     "remote": "https://vercel-serverless-hujanais.vercel.app/api/waters?articleId=4"
   },
 

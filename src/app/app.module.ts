@@ -15,6 +15,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RemoteContentPipe } from './pipes/remote-content.pipe';
 import { ICSTranslocoPipe } from './pipes/ics-transloco.pipe';
+import { ICSLocoSwitcherPipe } from './pipes/ics-locoswitcher.pipe';
 import { SafeHtmlPipe } from './pipes/safehtml.pipe';
 import { SafeUrlPipe } from './pipes/safeurl.pipe';
 import { SafeResourceUrlPipe } from './pipes/saferesourceurl.pipe';
@@ -37,6 +38,7 @@ import { VideoComponent } from './components/video/video.component';
     HomeComponent,
     PlaygroundComponent,
     VideoComponent,
+    ICSLocoSwitcherPipe,
   ],
   imports: [
     BrowserModule,

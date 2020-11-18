@@ -10,6 +10,35 @@
         </div>
 
         <ng-container *transloco="let t;">
+            <div>
+                <mat-card>
+                    <mat-card-title>
+                        Using pure pipes to automatically switch between local and remote assets depending on internet
+                        state.
+                    </mat-card-title>
+                    <mat-card-subtitle>
+                        <div>
+                            &lt;div [innerHTML]=&quot;t('article1.body') | icsLocoSwitcher: hasInternet | transloco |
+                            icsTransloco |
+                            async&quot;&gt;/div&gt;
+                        </div>
+                    </mat-card-subtitle>
+                    <mat-divider></mat-divider>
+                    <mat-card-content>
+                        <div>
+                            <mat-slide-toggle color='primary' [(ngModel)]="hasInternet">Has Internet?</mat-slide-toggle>
+                        </div>
+
+                        <div>
+                            {{'article1.body' | icsLocoSwitcher: hasInternet}}
+                            <div
+                                [innerHTML]="'article2.body' | icsLocoSwitcher: hasInternet | transloco | icsTransloco | async">
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+
             <mat-list>
                 <div>
                     <mat-card>
@@ -18,16 +47,19 @@
                         </mat-card-title>
                         <mat-card-subtitle>
                             <div>
-                                &lt;div&gt;t('primeSealWash.local') | icsTransloco | async}}&lt;/div&gt;
+                                'primeSealWash' | icsLocoSwitcher: hasInternet | transloco | icsTransloco |
+                                async
                             </div>
                         </mat-card-subtitle>
                         <mat-divider></mat-divider>
                         <mat-card-content>
                             <div>
                                 <h4>Local Text</h4>
-                                <div>{{t('primeSealWash.local') | icsTransloco | async}}</div>
+                                <div>{{'primeSealWash' | icsLocoSwitcher: false | transloco | icsTransloco | async}}
+                                </div>
                                 <h4>Remote Text</h4>
-                                <div>{{t('primeSealWash.remote') | icsTransloco | async }}</div>
+                                <div>{{'primeSealWash' | icsLocoSwitcher: true | transloco | icsTransloco | async}}
+                                </div>
                             </div>
                         </mat-card-content>
                     </mat-card>
@@ -39,8 +71,8 @@
                         </mat-card-title>
                         <mat-card-subtitle>
                             <div>
-                                &lt;div [innerHTML]="t('withInterpolations.remote') | icsTransloco:
-                                interpolatedValues | async">&lt;div&gt;
+                                'withInterpolations' | icsLocoSwitcher: hasInternet | transloco | icsTransloco:
+                                interpolatedValues | async
                             </div>
                         </mat-card-subtitle>
                         <mat-divider></mat-divider>
@@ -48,11 +80,11 @@
                             <div>
                                 <h4>Local Text with dynamic data.</h4>
                                 <div>
-                                    {{ t('withInterpolations.local', interpolatedValues) | icsTransloco | async }}
+                                    {{'withInterpolations' | icsLocoSwitcher: false | transloco | icsTransloco: interpolatedValues | async }}
                                 </div>
                                 <h4>Remote Text with dynamic data</h4>
-                                <div
-                                    [innerHTML]="t('withInterpolations.remote') | icsTransloco: interpolatedValues | async">
+                                <div>
+                                    {{'withInterpolations' | icsLocoSwitcher: true | transloco | icsTransloco: interpolatedValues | async }}
                                 </div>
                             </div>
                         </mat-card-content>
@@ -65,8 +97,8 @@
                         </mat-card-title>
                         <mat-card-subtitle>
                             <div>
-                                &lt;div [innerHTML]="t('withInterpolations.remote') | icsTransloco:
-                                interpolatedValues | async">&lt;div&gt;
+                                'withMissingInterpolations' | icsLocoSwitcher: hasInternet | transloco | icsTransloco |
+                                async
                             </div>
                         </mat-card-subtitle>
                         <mat-divider></mat-divider>
@@ -74,10 +106,11 @@
                             <div>
                                 <h4>Local Text with dynamic data.</h4>
                                 <div>
-                                    {{ t('withMissingInterpolations.local') | icsTransloco | async }}
+                                    {{'withMissingInterpolations' | icsLocoSwitcher: false | transloco | icsTransloco | async }}
                                 </div>
                                 <h4>Remote Text with dynamic data</h4>
-                                <div [innerHTML]="t('withMissingInterpolations.remote') | icsTransloco | async">
+                                <div>
+                                    {{'withMissingInterpolations' | icsLocoSwitcher: true | transloco | icsTransloco | async }}
                                 </div>
                             </div>
                         </mat-card-content>
@@ -90,8 +123,8 @@
                         </mat-card-title>
                         <mat-card-subtitle>
                             <div>
-                                &lt;div&gt;img [src]=&quot;t('logo.path.local') | icsTransloco | async&quot;
-                                /&gt;&lt;/div&gt;
+                                img width='250' height='250'
+                                [src]="'logo.path' | icsLocoSwitcher: true | transloco | icsTransloco | async"
                             </div>
                         </mat-card-subtitle>
                         <mat-divider></mat-divider>
@@ -99,14 +132,22 @@
                             <div class='div-column'>
                                 <div class='div-item'>
                                     <h4>Local Image</h4>
-                                    <div>{{'logo.path.local'| transloco | icsTransloco | async}}</div>
-                                    <div><img [src]="t('logo.path.local') | icsTransloco | async" /></div>
+                                    <div>
+                                        {{'logo.path' | icsLocoSwitcher: false | transloco | icsTransloco | async }}
+                                    </div>
+                                    <div>
+                                        <img
+                                            [src]="'logo.path' | icsLocoSwitcher: false | transloco | icsTransloco | async" />
+                                    </div>
                                 </div>
                                 <div class='div-item'>
                                     <h4>Remote Image</h4>
-                                    <div>{{'logo.path.remote'| transloco | icsTransloco | async}}</div>
+                                    <div>
+                                        {{'logo.path' | icsLocoSwitcher: true | transloco | icsTransloco | async }}
+                                    </div>
                                     <div><img width='250' height='250'
-                                            [src]="t('logo.path.remote') | icsTransloco | async" /></div>
+                                            [src]="'logo.path' | icsLocoSwitcher: true | transloco | icsTransloco | async" />
+                                    </div>
                                 </div>
                             </div>
                         </mat-card-content>
@@ -119,8 +160,7 @@
                         </mat-card-title>
                         <mat-card-subtitle>
                             <div>
-                                &lt;app-video width='200' height='200' [srcLink]=&quot;t('movie.path.local') |
-                                icsTransloco | async&quot; /&gt;
+                                'movie.path' | icsLocoSwitcher: false | transloco | icsTransloco | async
                             </div>
                         </mat-card-subtitle>
                         <mat-divider></mat-divider>
@@ -130,7 +170,7 @@
                                     <h4>Local Video</h4>
                                     <div>
                                         <app-video width='200' height='200'
-                                            [srcLink]="t('movie.path.local') | icsTransloco | async">
+                                            [srcLink]="'movie.path' | icsLocoSwitcher: false | transloco | icsTransloco | async">
                                         </app-video>
                                     </div>
                                 </div>
@@ -138,7 +178,7 @@
                                     <h4>Remote Video</h4>
                                     <div class='div-item'>
                                         <app-video width='200' height='200'
-                                            [srcLink]="t('movie.path.remote') | icsTransloco | async">
+                                            [srcLink]="'movie.path' | icsLocoSwitcher: true | transloco | icsTransloco | async">
                                         </app-video>
                                     </div>
                                 </div>
@@ -153,17 +193,20 @@
                         </mat-card-title>
                         <mat-card-subtitle>
                             <div>
-                                &lt;div [innerHTML]=&quot;t('article1.body.local') | icsTransloco |
-                                async&quot;&gt;/div&gt;
+                                'article1.body' | icsLocoSwitcher: false | transloco | icsTransloco | async
                             </div>
                         </mat-card-subtitle>
                         <mat-divider></mat-divider>
                         <mat-card-content>
                             <h4>Local HTML Article</h4>
-                            <div [innerHTML]="t('article1.body.local') | icsTransloco | async"></div>
+                            <div
+                                [innerHTML]="'article1.body' | icsLocoSwitcher: false | transloco | icsTransloco | async">
+                            </div>
 
                             <h4>Remote HTML Article</h4>
-                            <div [innerHTML]="t('article1.body.remote') | icsTransloco | async"></div>
+                            <div
+                                [innerHTML]="'article1.body' | icsLocoSwitcher: true | transloco | icsTransloco | async">
+                            </div>
                         </mat-card-content>
                     </mat-card>
                 </div>

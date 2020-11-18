@@ -14,6 +14,8 @@ export class HomeComponent implements OnInit {
 
   interpolatedValues: {};
 
+  hasInternet = false;
+
   constructor(private translocoService: TranslocoService) {
     this.interpolatedValues = { maxPressurekPa: '103,421', maxPressureBar: '1034', maxPressurePSI: '15,000' }
   }
