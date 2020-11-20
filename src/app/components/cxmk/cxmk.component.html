@@ -1,0 +1,57 @@
+<div class='div-cxkm-container'>
+    <div class='div-cxkm-body'>
+        <div class='div-cxkm-header'>
+            <h1>CXKM Examples</h1>
+            <mat-form-field>
+                <mat-label>Select an article</mat-label>
+                <mat-select [(value)]="selectedArticleId">
+                    <mat-option value="None">None</mat-option>
+                    <mat-option value="100">100</mat-option>
+                    <mat-option value="101">101</mat-option>
+                    <mat-option value="102">102</mat-option>
+                    <mat-option value="103">103</mat-option>
+                    <mat-option value="104">104</mat-option>
+                    <mat-option value="105">105</mat-option>
+                    <mat-option value="106">106</mat-option>
+                    <mat-option value="107">107</mat-option>
+                    <mat-option value="108">108</mat-option>
+                    <mat-option value="109">109</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <ng-container *transloco="let t;">
+            <mat-list>
+                <div>
+                    <mat-card>
+                        <mat-card-title>
+                            CXKM Article {{selectedArticleId}}
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            <div>
+                                &lt;div [innerHTML]="contentKey | icsLocoSwitcher: false | transloco | icsTransloco |
+                                async"&quot;&gt;/div&gt;
+                            </div>
+                            <div>Table style is implicitly applied for clarity. encapsulation: ViewEncapsulation.None
+                                required for styles.</div>
+                        </mat-card-subtitle>
+                        <mat-divider></mat-divider>
+                        <mat-card-content>
+                            <div>
+                                <h4>Local HTML Article</h4>
+                                <div
+                                    [innerHTML]="contentKey | icsLocoSwitcher: false | transloco | icsTransloco | async">
+                                </div>
+
+                                <h4>Remote HTML Article</h4>
+                                <div
+                                    [innerHTML]="contentKey | icsLocoSwitcher: true | transloco | icsTransloco | async">
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </mat-list>
+        </ng-container>
+    </div>
+</div>

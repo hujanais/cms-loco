@@ -1,0 +1,22 @@
+$toolbar-height: 60px;
+
+.div-cxkm-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - #{$toolbar-height});
+    overflow-y: auto;
+
+    .div-cxkm-body {
+        display: flex;
+        flex-direction: column;
+        margin: 5px;
+    }
+
+    .div-cxkm-header {
+        margin-left: 10px;
+    
+        mat-radio-button {
+            margin-left: 10px;
+        }
+    }
+}

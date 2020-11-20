@@ -18,7 +18,7 @@ export class TranslocoHttpLoader implements TranslocoLoader {
   languages: ILanguages;
 
   constructor(private http: HttpClient) {
-    this.languages = { files: ['part-1.json', 'part-2.json'] };
+    this.languages = { files: ['part-1.json', 'part-2.json', 'part-3.json'] };
   }
 
   getTranslation(lang: string) {

@@ -10,6 +10,7 @@ import { TranslocoRootModule } from './transloco/transloco-root.module';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -26,6 +27,7 @@ import { TRANSLOCO_INTERCEPTOR, TRANSLOCO_MISSING_HANDLER, TRANSLOCO_TRANSPILER 
 import { HomeComponent } from './components/home/home.component';
 import { PlaygroundComponent } from './components/playground/playground.component';
 import { VideoComponent } from './components/video/video.component';
+import { CxmkComponent } from './components/cxmk/cxmk.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { VideoComponent } from './components/video/video.component';
     PlaygroundComponent,
     VideoComponent,
     ICSLocoSwitcherPipe,
+    CxmkComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +56,7 @@ import { VideoComponent } from './components/video/video.component';
     MatListModule,
     MatDividerModule,
     MatToolbarModule,
+    MatSelectModule,
   ],
   providers: [
     {
