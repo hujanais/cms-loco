@@ -9,7 +9,7 @@ import { TranslocoService } from '@ngneat/transloco';
 })
 export class PlaygroundComponent implements OnInit {
   hasInternet = true;
-  _selectedLanguage = 'en';
+  _selectedLanguage = 'en-gb';
 
   constructor(private translocoService: TranslocoService, private http: HttpClient) {
   }

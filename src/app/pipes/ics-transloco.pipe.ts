@@ -34,7 +34,8 @@ export class ICSTranslocoPipe implements PipeTransform {
 
   // expecting text to be, "This is a sentence. $key1 $key2"
   // For now, the keys are case sensitive.
-  // ex. The column hardware and the matched outlet tubing can withstand as much as $maxPressurekPa kPa ($maxPressureBar bar, $maxPressurePSI psi).
+  // ex. The column hardware and the matched outlet tubing can withstand as 
+  // much as $maxPressurekPa kPa ($maxPressureBar bar, $maxPressurePSI psi).
   private interpolate(body: string, args: {}): string {
     if (args) {
       // search for all variables defined in the article body.

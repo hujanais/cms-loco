@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
 
-  private _selectedLanguage = 'en';
+  private _selectedLanguage = 'en-gb';
 
   interpolatedValues: {};
 
