@@ -30,7 +30,7 @@ export class TranslocoHttpLoader implements TranslocoLoader {
     });
 
     // merge the json content from cms.
-    sources.push(this.http.get(`${environment.cmsUrl}?language=${lang}`).pipe(
+    sources.push(this.http.get(`${environment.cmsUrl}/${lang}`).pipe(
       tap((m: any) => {
         if (m.errorCode !== 0) {
           throw new Error(m.message);
