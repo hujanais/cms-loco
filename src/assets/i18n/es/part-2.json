@@ -13,12 +13,12 @@
 
   "withInterpolations": {
     "local": " The column hardware and the matched outlet tubing can withstand as much as $maxPressurekPa kPa ($maxPressureBar bar, $maxPressurePSI psi).",
-    "remote": "https://vercel-serverless-hujanais.vercel.app/api/waters?articleId=2"
+    "remote": "https://vercel-serverless-hujanais.vercel.app/api/cxkm/articles/2"
   },
 
   "withMissingInterpolations": {
     "local": "Demostrates the scenario when the interpolated string are missing. $not-found",
-    "remote": "https://vercel-serverless-hujanais.vercel.app/api/waters?articleId=4"
+    "remote": "https://vercel-serverless-hujanais.vercel.app/api/cxkm/articles/4"
   },
 
   "logo": {
@@ -38,7 +38,7 @@
   "article1": {
     "body": {
       "local": "<h3>Example of 2 paragraphs.</h3>",
-      "remote": "https://vercel-serverless-hujanais.vercel.app/api/waters?articleId=1"
+      "remote": "https://vercel-serverless-hujanais.vercel.app/api/cxkm/articles/1"
     }
   }
 }

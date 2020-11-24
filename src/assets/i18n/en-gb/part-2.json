@@ -2,7 +2,7 @@
   "mood": "estatic",
   "primeSealWash": {
     "local": "No tasks are required prior to performing a qualification.",
-    "remote": "https://vercel-serverless-hujanais.vercel.app/api/waters?articleId=3"
+    "remote": "https://vercel-serverless-hujanais.vercel.app/api/cxkm/articles/3"
   },
 
   "swipe": {
@@ -13,12 +13,12 @@
 
   "withInterpolations": {
     "local": "The column hardware and the matched outlet tubing can withstand as much as $maxPressurekPa kPa ($maxPressureBar bar, $maxPressurePSI psi).",
-    "remote": "https://vercel-serverless-hujanais.vercel.app/api/waters?articleId=2"
+    "remote": "https://vercel-serverless-hujanais.vercel.app/api/cxkm/articles/2"
   },
 
   "withMissingInterpolations": {
     "local": "Demostrates the scenario when the interpolated string are missing. $not-found",
-    "remote": "https://vercel-serverless-hujanais.vercel.app/api/waters?articleId=4"
+    "remote": "https://vercel-serverless-hujanais.vercel.app/api/cxkm/articles/4"
   },
 
   "logo": {
@@ -45,7 +45,7 @@
   "article2": {
     "body": {
       "local": "<p>If you chose Configure settings for a non-regulated environment (non GxP)</uicontrol>, UNIFI software configures these global policies.</p><p><table><tr><th>Policy</th><th>Settings</th><th>Description</th></tr><tr><td>Audit Trail Reasons</td><td>No reasons and passwords required.</td><td>Users do not need to supply a reason and their password when they modify or delete a system object.</td></tr><tr><td>Timeout</td><td>60 minutes for both inactive work sessions and Signoff dialog box<td>The number of minutes that a work session can remain inactive before the application closes and users must enter their user names and passwords to log back on to the software.The number of minutes that the Signoff dialog box can remain inactive before it closes.</tr><tr><td>User Account</td><td>No password or limit to the number of failed authentication attempts.</td><td>No user account password requirements and no limit to the number of times that users can enter their user name and password incorrectly before their account status is changed from active to disabled.</td></tr><tr><td>Qualification</td><td>No qualification requirements.</td><td>No tasks are required prior to performing a qualification.</td></tr></table></p><p>The data folder policy Non GxP is applied to the Company data folder and users do not need to supply a reason and their password when modify or delete objects such as analysis injections and reports that reside in data folders.</p>",
-      "remote": "https://vercel-serverless-hujanais.vercel.app/api/waters?articleId=1"
+      "remote": "https://vercel-serverless-hujanais.vercel.app/api/cxkm/articles/1"
     }
   },
 
@@ -53,7 +53,7 @@
     "article4": {
       "body": {
         "local": "No Content",
-        "remote": "https://vercel-serverless-hujanais.vercel.app/api/waters?articleId=10"
+        "remote": "https://vercel-serverless-hujanais.vercel.app/api/cxkm/articles/10"
       }
     }
   }
