@@ -39,6 +39,8 @@ export class TranslocoHttpLoader implements TranslocoLoader {
       map((m: any) => m.data)
     ));
 
+    concat(...sources).subscribe(d => { console.log(d) });
+
     return concat(...sources);
   }
 }

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  cmsUrl: 'https://vercel-serverless-hujanais.vercel.app/api/cxkm'
+  //cmsUrl: 'https://vercel-serverless-hujanais.vercel.app/api/cxkm'
+  cmsUrl: 'http://localhost:4000/api/cxkm'
 };
 
 /*
